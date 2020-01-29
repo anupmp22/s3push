@@ -1,0 +1,32 @@
+---
+- name: wait for 30 seconds
+  wait_for:
+        timeout: 30
+
+- name: upload csv
+  shell: aws s3 cp /home/terraform_pracrice/locust s3://mp-locust/ --recursive --exclude "*.yml" --exclude "hosts" --exclude "locust.pem" --exclude "ansible.cfg" --include "*.csv"
+  args:
+    chdir: /home/terraform_pracrice/locust
+##   mode: push
+##   overwrite: no
+
+
+
+
+
+
+
+
+     
+##- name: wait for 30 seconds
+##  wait_for:
+##        timeout: 30
+
+
+
+## - name: upload csv files
+##   aws_s3:
+ ##     bucket: mp-locust
+##      object: /mp/csv/user1.csv
+   ##   src: /home/terraform_pracrice/locust/user1.csv
+    ##  mode: put

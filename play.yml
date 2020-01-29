@@ -1,0 +1,6 @@
+---
+ - name: main yaml file
+   hosts: localhost
+
+   roles:
+      - csv
